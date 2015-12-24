@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<HTML>
+	<head>
+		<!-- Parse -->
+		<script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		
+		<!-- Bootsrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+		<!-- Bootstrap JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		
+		<title>Join Studien!</title>
+	</head>
+	
+	<body>
+	
+		<!-- Reg. form Start -->
+		<form id="SignUpForm">
+			<div class="form-group">
+				<label for="email">Email address: </label>
+				<input type="email" class="form-control" id="email" placeholder="Email">
+			</div>
+			<div class="form-group">
+				<label for="firstName">First Name: </label>
+				<input type="text" class="form-control" id="firstName" placeholder="First Name">
+			</div>
+			<div class="form-group">
+				<label for="lastName">Last Name: </label>
+				<input type="text" class="form-control" id="lastName" placeholder="Last Name">
+			</div>
+			<div class="form-group">
+				<label for="password">Password: </label>
+				<input type="password" class="form-control" id="password" placeholder="Password">
+			</div>
+			<div class="form-group">
+				<label for="confirmPassword">Confirm Password:</label>
+				<input type="password" class="form-control" id="confirmPassword" placeholder="Password">
+			</div>
+			<div class="form-group">
+			<label for="userRole">Join as:</label>
+				<select id="userRole" class="form-control">
+					<option>Select Role</option>
+					<option value="Tutee">Tutee</option>
+					<option value="Tutor">Tutor</option>
+				</select>
+			</div>
+
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+		<!-- Reg. form End -->
+		
+		
+		
+		<script type="text/javascript">
+		
+			Parse.initialize("cWXjlwyKH3BwBbxFjhun4IJAlOhrU5PuoURXSmFT", "hYh3XGDxMPQFCSVa6KbCZnbWClx5YFqynfIDtFLv");
+		
+			$('#SignUpForm').on('submit', function(e) {
+				e.preventDefault();
+				
+				// Validate
+				
+				// Create new user
+				var role = 0;
+				if($('#userRole').val() === 'Tutee'){
+					role = 0;
+				}
+				else if($('#userRole').val() === 'Tutor'){
+					role = 1;
+				}
+				
+				var user = new Parse.User();
+				user.set("email", $('#email').val());
+				user.set("username", $('#email').val());
+				user.set("firstName", $('#firstName').val());
+				user.set("lastName", $('#lastName').val());
+				user.set("password", $('#password').val());
+				user.set("userRole", role);
+
+				user.signUp(null, {
+					success: function(user) {
+						// Hooray! Let them use the app now.
+						window.location.href = 'Dashboard.html';
+					},
+					error: function(user, error) {
+						// Show the error message somewhere and let the user try again.
+						alert("Error: " + error.code + " " + error.message);
+					}
+				});
+				
+				
+				//this.submit(); //now submit the form
+			});
+			
+		</script>
+		
+	</body>
+</HTML>

@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<HTML>
+	<head>
+		<!-- Parse -->
+		<script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		
+		<!-- Bootsrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+		<!-- Bootstrap JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		
+		<title>Studien</title>
+		
+		<style>
+			.center-div {
+				position: absolute;
+				margin: auto;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				width: 30%;
+				height: 30%;
+				//background-color: #ccc;
+				border-radius: 3px;
+			}
+			
+			#drawingCanvas {
+				background-color: #004;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+
+		<canvas id="drawingCanvas" width="640" height="640"></canvas>
+		
+		<button id="clearCanvasButton">Clear</button><br />
+		
+		Theme:
+		<label class="checkbox-inline"><input id="themeCheckbox_light" type="checkbox" value="light">Drizzy</label>
+		<label class="checkbox-inline"><input id="themeCheckbox_dark" type="checkbox" value="dark">Wesley Snipes</label>
+		
+		<select id="colourSelect" class="form-control">
+			<option value="#df4b26">Orange</option>
+			<option value="#cb3594">Purple</option>
+			<option value="#659b41">Green</option>
+			<option value="#986928">Brown</option>
+		</select>
+		<select id="toolSelect" class="form-control">
+			<option value="marker">Marker</option>
+			<option value="eraser">Eraser</option>
+		</select>
+
+
+		
+		
+		
+	
+		
+		<script type="text/javascript">
+			
+			$( document ).ready(function() {
+				
+				context = document.getElementById('drawingCanvas').getContext("2d");
+				
+				// Drawing
+				var clickX = new Array();
+				var clickY = new Array();
+				var clickDrag = new Array();
+				var paint;
+				
+				// Colour
+				var currentColor = "#df4b26";
+				var clickColor = new Array();
+				
+				// Sizes
+				var clickSizes = new Array();
+				var defaultMarkerStrokeWidth = 5;
+				var defaultEraserStrokeWidth = 10;
+				
+				// Tools
+				var clickTool = new Array();
+				var currentTool = "marker"; // Other tool is "eraser"
+
+				// function signature - addClick(number x, number y, bool dragging)
+				function addClick(x, y, dragging)
+				{
+					clickX.push(x);
+					clickY.push(y);
+					clickDrag.push(dragging);
+					
+					if(currentTool == "eraser"){
+						var canvasBackgroundColour = $('#drawingCanvas').css('backgroundColor');
+						clickColor.push(rgbToHex(canvasBackgroundColour));
+						clickSizes.push(defaultEraserStrokeWidth);
+					}
+					else{
+						clickColor.push(currentColor);
+						clickSizes.push(defaultMarkerStrokeWidth);
+					}
+				}
+				
+				function redraw(){
+					context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
+  
+					context.lineJoin = "round";
+			
+					for(var i=0; i < clickX.length; i++) {		
+						context.beginPath();
+						if(clickDrag[i] && i){
+							context.moveTo(clickX[i-1], clickY[i-1]);
+						}
+						else{
+							context.moveTo(clickX[i]-1, clickY[i]);
+						}
+						context.lineTo(clickX[i], clickY[i]);
+						context.closePath();
+						context.strokeStyle = clickColor[i];
+						context.lineWidth = clickSizes[i];
+						context.stroke();
+					}
+				}
+				
+
+				$('#clearCanvasButton').on('click', function(e) {
+					clickX = new Array();
+					clickY = new Array();
+					clickDrag = new Array();
+					clickColor = new Array();
+					clickSizes = new Array();
+					paint = false;
+				
+					redraw();
+				});
+				
+				$('#colourSelect').on('change', function(e) {
+					currentColor = $(this).val();
+				});
+				
+				$('#toolSelect').on('change', function(e) {
+					currentTool = $(this).val();
+				});
+				
+				$('#themeCheckbox_light').on('change', function() { 
+    // From the other examples
+					if (this.checked) {
+						$('#drawingCanvas').css('backgroundColor', "#fff");
+					}
+					else{
+						$('#drawingCanvas').css('backgroundColor', "#044");
+					}
+				});
+				
+				$('#drawingCanvas').mousedown(function(e){
+					var mouseX = e.pageX - this.offsetLeft;
+					var mouseY = e.pageY - this.offsetTop;
+		
+					// Lets us know if the virtual marker is pressing down on the paper or not.
+					// If true while mouse moves we know to keep on drawing.
+					paint = true;
+					addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
+					redraw();
+				});
+				
+				$('#drawingCanvas').mousemove(function(e){
+					if(paint){
+						addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
+						redraw();
+					}
+				});
+				
+				$('#drawingCanvas').mouseup(function(e){
+					paint = false;
+				});
+				
+				$('#drawingCanvas').mouseleave(function(e){
+					paint = false;
+				});
+				
+				///////////////////////////////////////////////////////
+				/////////////////////// HELPER ////////////////////////
+				///////////////////////////////////////////////////////
+				function rgbToHex(colorval) {
+					var color = '';
+					
+					var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+					delete(parts[0]);
+					for (var i = 1; i <= 3; ++i) {
+					parts[i] = parseInt(parts[i]).toString(16);
+					if (parts[i].length == 1) parts[i] = '0' + parts[i];
+					}
+					color = '#' + parts.join('');
+					
+					return color;
+				}
+				
+			});
+			
+		</script>
+		
+	</body>
+</HTML>
