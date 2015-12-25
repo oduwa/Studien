@@ -21,38 +21,32 @@
 	
 		<!-- Reg. form Start -->
 		<form id="SignUpForm">
-			<div class="form-group">
-				<label for="email">Email address: </label>
-				<input type="email" class="form-control" id="email" placeholder="Email">
-			</div>
-			<div class="form-group">
-				<label for="firstName">First Name: </label>
-				<input type="text" class="form-control" id="firstName" placeholder="First Name">
-			</div>
-			<div class="form-group">
-				<label for="lastName">Last Name: </label>
-				<input type="text" class="form-control" id="lastName" placeholder="Last Name">
-			</div>
-			<div class="form-group">
-				<label for="password">Password: </label>
-				<input type="password" class="form-control" id="password" placeholder="Password">
-			</div>
-			<div class="form-group">
-				<label for="confirmPassword">Confirm Password:</label>
-				<input type="password" class="form-control" id="confirmPassword" placeholder="Password">
-			</div>
-			<div class="form-group">
-			<label for="userRole">Join as:</label>
-				<select id="userRole" class="form-control">
-					<option>Select Role</option>
-					<option value="Tutee">Tutee</option>
-					<option value="Tutor">Tutor</option>
-				</select>
-			</div>
+			<label for="tags">Tags: </label> 
+							<!-- <span id="jd"  class="label label-primary"><button><span style="color:#f00;" aria-hidden="true">&times;</span></button>Primary</span> -->
+							</div>
+							<button class="pull-right" data-toggle="modal" data-target="#myModal">Add Tag</button>
 
-			<button type="submit" class="btn btn-default">Submit</button>
+			
 		</form>
 		<!-- Reg. form End -->
+		
+		<!-- Modal -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+					      <div class="modal-body">
+							  <div class="form-group" style="margin-top:15px;">
+							  	<label for="tag" class="control-label">Add Tag:</label>
+							  	<input type="text" class="form-control" id="tagInput">
+							  </div>
+					      </div>
+		  			    <div class="modal-footer">
+		  			      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+		  			      <button class="btn btn-primary" data-dismiss="modal" id="addTagButton">Add</button>
+		  			    </div>
+					    </div>
+					  </div>
+					</div>
 		
 		
 		
@@ -85,7 +79,7 @@
 				user.signUp(null, {
 					success: function(user) {
 						// Hooray! Let them use the app now.
-						window.location.href = 'CollectFurtherInfo.html';
+						window.location.href = 'Dashboard.html';
 					},
 					error: function(user, error) {
 						// Show the error message somewhere and let the user try again.
