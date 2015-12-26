@@ -20,12 +20,25 @@
 	<body>
 	
 		<!-- Reg. form Start -->
-		<form id="SignUpForm">
-			<label for="tags">Tags: </label> 
-							<!-- <span id="jd"  class="label label-primary"><button><span style="color:#f00;" aria-hidden="true">&times;</span></button>Primary</span> -->
-							</div>
-							<button class="pull-right" data-toggle="modal" data-target="#myModal">Add Tag</button>
+		<form id="CollectInfoForm">
+			<div style="background-color:#fff">
+				<div id="profilePicPreview"></div>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputFile">Profile Picture</label>
+			    <input type="file" accept="image/*" id="profilePicFile">
+			    <p class="help-block">Please select a picture for upload.</p>
+			<div class="form-group">
+				<label for="bioArea">About You</label>
+				<textarea class="form-control" rows="15" id="bioArea" placeholder="Tell us about yourself . . . " maxlength="400"></textarea><br />
+			</div>
+			<div class="pull-left" id="tagGroup">
+							<label for="tags">Hobbies </label> 
+			</div>
+			<button class="pull-right" data-toggle="modal" data-target="#myModal">Add Hobby</button><br />
+			
 
+			<button type="submit" class="btn btn-default">Submit</button>
 			
 		</form>
 		<!-- Reg. form End -->
@@ -53,42 +66,74 @@
 		<script type="text/javascript">
 		
 			Parse.initialize("cWXjlwyKH3BwBbxFjhun4IJAlOhrU5PuoURXSmFT", "hYh3XGDxMPQFCSVa6KbCZnbWClx5YFqynfIDtFLv");
+			var tags = [];
+			
+			document.getElementById('profilePicFile').addEventListener('change', function(){
+			
+			    var file = this.files[0];
+			
+			    // This code is only for demo ...
+			
+			    console.log("name : " + file.name);
+				
+				var img = document.createElement("img");
+				var fr = new FileReader();
+				        fr.onload = function () {
+				            img.src = fr.result;
+							img.width = 200;
+				        }
+				        fr.readAsDataURL(file);
+				    document.getElementById("profilePicPreview").appendChild(img);
+					
+				
+				//var img = document.getElementById('profilePicPreview');
+				//img.file = file;
+				
+			
+			}, false);
+			
+			
+			
+			function removeTagWithId(id){
+							//remove tag from array
+							for(var i = 0; i < tags.length; i++){
+								if(tags[i] === id){
+									tags[i] = "";
+								}
+							}
+							$("#"+id).html("");
+						}
+						
+			function showTags(){
+							var str = "";
+							for(var i = 0; i < tags.length; i++){
+								str = str + tags[i] + " ";
+							}
+							alert(str);
+						}			
+						
+						$('#addTagButton').click(function(){
+											// check for input
+											if($("#tagInput").val().trim() === ""){
+												return false;
+											}
+					
+											// get tag entered
+											var newTag = $("#tagInput").val();
+					
+											// check that it hasnt already been added before adding it
+											if($.inArray(newTag, tags) == -1){
+												tags[tags.length] = newTag;
+												$("#tagGroup").append("<span id=\"" + newTag + "\"  class=\"label label-primary\"><button onclick=\"removeTagWithId('"+newTag+"')\"><span style=\"color:#f00;\" aria-hidden=\"true\">&times;</span></button>" + newTag + "</span>\n");
+											}
+					
+											// clear text field
+											$("#tagInput").val("");
+										});
 		
-			$('#SignUpForm').on('submit', function(e) {
+			$('#CollectInfoForm').on('submit', function(e) {
 				e.preventDefault();
-				
-				// Validate
-				
-				// Create new user
-				var role = 0;
-				if($('#userRole').val() === 'Tutee'){
-					role = 0;
-				}
-				else if($('#userRole').val() === 'Tutor'){
-					role = 1;
-				}
-				
-				var user = new Parse.User();
-				user.set("email", $('#email').val());
-				user.set("username", $('#email').val());
-				user.set("firstName", $('#firstName').val());
-				user.set("lastName", $('#lastName').val());
-				user.set("password", $('#password').val());
-				user.set("userRole", role);
-
-				user.signUp(null, {
-					success: function(user) {
-						// Hooray! Let them use the app now.
-						window.location.href = 'Dashboard.html';
-					},
-					error: function(user, error) {
-						// Show the error message somewhere and let the user try again.
-						alert("Error: " + error.code + " " + error.message);
-					}
-				});
-				
-				
-				//this.submit(); //now submit the form
+				alert('c');
 			});
 			
 		</script>
