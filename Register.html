@@ -85,7 +85,13 @@
 				user.signUp(null, {
 					success: function(user) {
 						// Hooray! Let them use the app now.
-						window.location.href = 'CollectFurtherInfo.html';
+						if(role == 1){
+							window.location.href = 'CollectFurtherInfo.html';
+						}
+						else{
+							window.location.href = 'Dashboard.html';
+						}
+						
 					},
 					error: function(user, error) {
 						// Show the error message somewhere and let the user try again.

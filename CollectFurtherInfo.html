@@ -26,64 +26,68 @@
 			</div>
 			<div class="form-group">
 				<label for="exampleInputFile">Profile Picture</label>
-			    <input type="file" accept="image/*" id="profilePicFile">
-			    <p class="help-block">Please select a picture for upload.</p>
-			<div class="form-group">
-				<label for="bioArea">About You</label>
-				<textarea class="form-control" rows="15" id="bioArea" placeholder="Tell us about yourself . . . " maxlength="400"></textarea><br />
-			</div>
-			<div class="pull-left" id="tagGroup">
-							<label for="tags">Hobbies </label> 
-			</div>
-			<button class="pull-right" data-toggle="modal" data-target="#myModal">Add Hobby</button><br />
+				<input type="file" accept="image/*" id="profilePicFile">
+				<p class="help-block">Please select a picture for upload.</p>
+				<div class="form-group">
+					<label for="bioArea">About You</label>
+					<textarea class="form-control" rows="15" id="bioArea" placeholder="Tell us about yourself . . . " maxlength="400"></textarea><br />
+				</div>
+				<div class="pull-left" id="tagGroup">
+					<label for="tags">Hobbies </label> 
+				</div>
+				<button class="pull-right" data-toggle="modal" data-target="#myModal">Add Hobby</button><br />
 			
 
-			<button type="submit" class="btn btn-default">Submit</button>
+				<button id="submitBtn" type="submit" class="btn btn-default">Submit</button>
 			
-		</form>
-		<!-- Reg. form End -->
+			</form>
+			<!-- Reg. form End -->
 		
-		<!-- Modal -->
-					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					  <div class="modal-dialog">
-					    <div class="modal-content">
-					      <div class="modal-body">
-							  <div class="form-group" style="margin-top:15px;">
-							  	<label for="tag" class="control-label">Add Tag:</label>
-							  	<input type="text" class="form-control" id="tagInput">
-							  </div>
-					      </div>
-		  			    <div class="modal-footer">
-		  			      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-		  			      <button class="btn btn-primary" data-dismiss="modal" id="addTagButton">Add</button>
-		  			    </div>
-					    </div>
-					  </div>
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="form-group" style="margin-top:15px;">
+								<label for="tag" class="control-label">Add Hobby:</label>
+								<input type="text" class="form-control" id="tagInput">
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+							<button class="btn btn-primary" data-dismiss="modal" id="addTagButton">Add</button>
+						</div>
 					</div>
+				</div>
+			</div>
 		
 		
 		
-		<script type="text/javascript">
+			<script type="text/javascript">
 		
 			Parse.initialize("cWXjlwyKH3BwBbxFjhun4IJAlOhrU5PuoURXSmFT", "hYh3XGDxMPQFCSVa6KbCZnbWClx5YFqynfIDtFLv");
 			var tags = [];
+			var profilePicFile;
+			var filename;
 			
 			document.getElementById('profilePicFile').addEventListener('change', function(){
 			
-			    var file = this.files[0];
+				var file = this.files[0];
 			
-			    // This code is only for demo ...
+				// This code is only for demo ...
 			
-			    console.log("name : " + file.name);
+				console.log("name : " + file.name);
 				
 				var img = document.createElement("img");
 				var fr = new FileReader();
-				        fr.onload = function () {
-				            img.src = fr.result;
-							img.width = 200;
-				        }
-				        fr.readAsDataURL(file);
-				    document.getElementById("profilePicPreview").appendChild(img);
+				fr.onload = function () {
+					img.src = fr.result;
+					img.width = 200;
+				}
+				fr.readAsDataURL(file);
+				document.getElementById("profilePicPreview").appendChild(img);
+				profilePicFile = file;
+				filename = file.name
 					
 				
 				//var img = document.getElementById('profilePicPreview');
@@ -95,48 +99,69 @@
 			
 			
 			function removeTagWithId(id){
-							//remove tag from array
-							for(var i = 0; i < tags.length; i++){
-								if(tags[i] === id){
-									tags[i] = "";
-								}
-							}
-							$("#"+id).html("");
-						}
+				//remove tag from array
+				for(var i = 0; i < tags.length; i++){
+					if(tags[i] === id){
+						tags[i] = "";
+					}
+				}
+				$("#"+id).html("");
+			}
 						
 			function showTags(){
-							var str = "";
-							for(var i = 0; i < tags.length; i++){
-								str = str + tags[i] + " ";
-							}
-							alert(str);
-						}			
+				var str = "";
+				for(var i = 0; i < tags.length; i++){
+					str = str + tags[i] + " ";
+				}
+				alert(str);
+			}			
 						
-						$('#addTagButton').click(function(){
-											// check for input
-											if($("#tagInput").val().trim() === ""){
-												return false;
-											}
+			$('#addTagButton').click(function(){
+				// check for input
+				if($("#tagInput").val().trim() === ""){
+					return false;
+				}
 					
-											// get tag entered
-											var newTag = $("#tagInput").val();
+				// get tag entered
+				var newTag = $("#tagInput").val();
 					
-											// check that it hasnt already been added before adding it
-											if($.inArray(newTag, tags) == -1){
-												tags[tags.length] = newTag;
-												$("#tagGroup").append("<span id=\"" + newTag + "\"  class=\"label label-primary\"><button onclick=\"removeTagWithId('"+newTag+"')\"><span style=\"color:#f00;\" aria-hidden=\"true\">&times;</span></button>" + newTag + "</span>\n");
-											}
+				// check that it hasnt already been added before adding it
+				if($.inArray(newTag, tags) == -1){
+					tags[tags.length] = newTag;
+					$("#tagGroup").append("<span id=\"" + newTag + "\"  class=\"label label-primary\"><button onclick=\"removeTagWithId('"+newTag+"')\"><span style=\"color:#f00;\" aria-hidden=\"true\">&times;</span></button>" + newTag + "</span>\n");
+				}
 					
-											// clear text field
-											$("#tagInput").val("");
-										});
+				// clear text field
+				$("#tagInput").val("");
+			});
 		
 			$('#CollectInfoForm').on('submit', function(e) {
-				e.preventDefault();
-				alert('c');
+				e.preventDefault();	
 			});
 			
-		</script>
+			$('#submitBtn').on('click', function(e) {
+				var currentUser = Parse.User.current();
+				
+				var parseFile = new Parse.File(filename, profilePicFile);
+				
+				currentUser.set("bio", $('#bioArea').val());
+				currentUser.set("hobbies", tags);
+				currentUser.set("avatar", parseFile);
+				
+				currentUser.save(null, {
+				  success: function() {
+				    window.location.href = 'Dashboard.html';
+				  },
+				  error: function( error) {
+				    // Execute any logic that should take place if the save fails.
+				    // error is a Parse.Error with an error code and message.
+				    alert('Failed to save details, with error code: ' + error.message);
+				  }
+				});
+
+			});
+			
+			</script>
 		
-	</body>
-</HTML>
+		</body>
+	</HTML>
