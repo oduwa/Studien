@@ -2,6 +2,17 @@ body {
     background: #eee;
     text-align: center;
     padding: 0 25px;
+    padding-top: 65px;
+}
+
+.profile-img{
+margin-top: -5px;
+margin-right: 5px;
+float: left;
+background-size: 30px 30px;
+background-repeat: no-repeat;
+width: 30px;
+height: 30px;
 }
 
 #main {
