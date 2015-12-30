@@ -55,6 +55,22 @@ for($i = 0; $i < count($all_subjects); $i++){
 			<?php echo $subject->get("description");?>
 		</p>
 		
+		<h6>Available tutors:</h6>
+		<ul id="tutee-subject-list" class="list-group">
+			<?php
+				$sessionQuery = new ParseQuery("LectureSession");
+				$sessionQuery->equalTo("subject", $subject->get("title"));
+				$sessionQuery->equalTo("isSessionActive", true);
+				$sessionsList = $sessionQuery->find();
+				
+				for ($i = 0; $i < count($sessionsList); $i++) {
+				  $session = $sessionsList[$i];
+				  echo '<li class="list-group-item"><a href="Classroom.php?lectureId=' . $session->getObjectId() . '">' . $session->get('tutorName') . '</a></li>';
+				}
+			?>
+		</ul>
+		
+		
 		
 		
 		

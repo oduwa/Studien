@@ -15,7 +15,7 @@
             <ul class="nav navbar-nav">
                 <li id="dashboardListItem"><a href="#">Dashboard<span class="sr-only">(current)</span></a></li>
                 <li id="subjectListItem"><a href="#">Subjects</a></li>
-				<li id="classroomListItem"><a href="Classroom.php">Classroom</a></li>
+				<li id="classroomListItem"><a href="TutorClassroomSelect.php">Enter Classroom</a></li>
 				<li id="teachingListItem"><a href="#">Teaching Materials</a></li>
 				<li id="timesheetListItem"><a href="#">Timesheet</a></li>
             </ul>
