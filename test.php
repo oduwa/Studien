@@ -17,7 +17,6 @@ if(session_status() != PHP_SESSION_ACTIVE){
 <HTML>
 	<head>
 		<?php include 'includes.php';?>
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 	</head>
 	
 	<body>
@@ -29,11 +28,16 @@ if(session_status() != PHP_SESSION_ACTIVE){
 		?>
 		
 		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">End Session</button>
+		<button type="button" class="btn btn-info" id="tutorEndSessionButton">End Session2</button>
 		
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
+					<div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal">&times;</button>
+					        <h4 class="modal-title">Please Rate Your Tutor To Complete The Session</h4>
+					</div>
 					<div class="modal-body">
 						<div class="form-group" style="margin-top:15px;">
 							<div class="stars">
@@ -149,6 +153,8 @@ if(session_status() != PHP_SESSION_ACTIVE){
 				
 				$('#doneRatingButton').click(function(){
 		
+					var tutorUsername = lectureSession.get("tutorUsername");
+		
 					if(typeof $('input[name=attitude]:checked', '#attitude-form').val() === "undefined"
 						|| typeof $('input[name=preparedness]:checked', '#preparedness-form').val() === "undefined"
 						|| typeof $('input[name=thoroughness]:checked', '#thoroughness-form').val() === "undefined"
@@ -158,17 +164,37 @@ if(session_status() != PHP_SESSION_ACTIVE){
 					}
 					else
 					{
-						var attitudeRating = $('input[name=attitude]:checked', '#attitude-form').val();
-						var preparednessRating = 
-						var usefulnessRating = 
-						var thoroughnessRating = 
+						var attitudeRating = parseFloat($('input[name=attitude]:checked', '#attitude-form').val());
+						var preparednessRating = parseFloat($('input[name=preparedness]:checked', '#preparedness-form').val());
+						var usefulnessRating = parseFloat($('input[name=usefulness]:checked', '#usefulness-form').val());
+						var thoroughnessRating = parseFloat($('input[name=thoroughness]:checked', '#thoroughness-form').val());
+						
+						var meanRating = (attitudeRating + preparednessRating + usefulnessRating + thoroughnessRating)/4.0;
+						
+						Parse.Cloud.run('updateTutorRating', { tutorUsername: tutorUsername, rating: meanRating });
 					}
-					/* Make sure user has filled in all ratings */
-					alert("."+$('input[name=attitude]:checked', '#attitude-form').val()+".");
+					
 					
 				});
 				
+				$('#tutorEndSessionButton').click(function(){
+	
+					lectureSession.destroy({
+					  success: function(lectureSession) {
+					    // The object was deleted from the Parse Cloud.
+						  window.location.href = "Dashboard.php";
+					  },
+					  error: function(lectureSession, error) {
+					      console.log('tutorEndSession failed, with error code: ' + error.message);
+					  }
+					});
+				
+				});
+				
 			});
+			
+			
+			
 		</script>
 		
 	</body>

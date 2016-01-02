@@ -17,7 +17,6 @@
             <ul class="nav navbar-nav">
                 <li id="dashboardListItem"><a href="Dashboard.php">Dashboard<span class="sr-only">(current)</span></a></li>
                 <li id="subjectsListItem"><a href="TuteeSubjects.php">My Subjects</a></li>
-				<li id="classroomListItem"><a href="Classroom.php">Classroom</a></li>
 				<li id="revisionListItem"><a href="#">Revision Materials</a></li>
 				<li id="searchListItem"><a href="#">Search</a></li>
             </ul>
