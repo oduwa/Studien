@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "AppUtils/AppUtils.h"
 
 @interface LoginViewController (){
     BOOL isKeyboardShown;
@@ -26,6 +27,24 @@
     
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
     [self.view addGestureRecognizer:tapRecognizer];
+    
+    /* Bottom borders for Text Fields */
+    CALayer *usernameBorder = [CALayer layer];
+    CGFloat borderWidth = 1;
+    usernameBorder.borderColor = [AppUtils colorWithHexString:@"#b44929"].CGColor;
+    usernameBorder.frame = CGRectMake(0, _emailTextField.frame.size.height - borderWidth, [UIScreen mainScreen].bounds.size.width-40, _emailTextField.frame.size.height);
+    usernameBorder.borderWidth = borderWidth;
+    [_emailTextField.layer addSublayer:usernameBorder];
+    _emailTextField.layer.masksToBounds = YES;
+    
+    /*
+    CALayer *passwordBorder = [CALayer layer];
+    passwordBorder.borderColor = [AppUtils colorWithHexString:@"#b44929"].CGColor;
+    passwordBorder.frame = CGRectMake(0, _passwordTextField.frame.size.height - borderWidth, [UIScreen mainScreen].bounds.size.width-40, _passwordTextField.frame.size.height);
+    passwordBorder.borderWidth = borderWidth;
+    [_passwordTextField.layer addSublayer:passwordBorder];
+    _passwordTextField.layer.masksToBounds = YES;
+     */
 }
 
 - (void) viewDidAppear:(BOOL)animated

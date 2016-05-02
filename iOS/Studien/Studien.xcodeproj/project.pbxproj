@@ -16,6 +16,14 @@
 		4C5F18661CD80AC700617B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C5F18641CD80AC700617B2A /* LaunchScreen.storyboard */; };
 		4C5F186F1CD80FF400617B2A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F186E1CD80FF400617B2A /* LoginViewController.m */; };
 		4C5F18731CD810E200617B2A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5F18721CD810E200617B2A /* logo.png */; };
+		4C5F18771CD81D0C00617B2A /* AppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F18761CD81D0C00617B2A /* AppUtils.m */; };
+		4C5F18861CD81DF700617B2A /* NSArray+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F187A1CD81DF700617B2A /* NSArray+Helpers.m */; };
+		4C5F18871CD81DF700617B2A /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F187C1CD81DF700617B2A /* UIActionSheet+Blocks.m */; };
+		4C5F18881CD81DF700617B2A /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F187E1CD81DF700617B2A /* UIImage+Additions.m */; };
+		4C5F18891CD81DF700617B2A /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F18801CD81DF700617B2A /* UIImage+ImageEffects.m */; };
+		4C5F188B1CD81DF700617B2A /* UIView+BlurEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F18851CD81DF700617B2A /* UIView+BlurEffect.m */; };
+		4C5F188F1CD81E4700617B2A /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F188E1CD81E4700617B2A /* FXBlurView.m */; };
+		4C5F18931CD81E5F00617B2A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F18921CD81E5F00617B2A /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +42,22 @@
 		4C5F186D1CD80FF400617B2A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		4C5F186E1CD80FF400617B2A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		4C5F18721CD810E200617B2A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		4C5F18751CD81D0C00617B2A /* AppUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtils.h; sourceTree = "<group>"; };
+		4C5F18761CD81D0C00617B2A /* AppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtils.m; sourceTree = "<group>"; };
+		4C5F18791CD81DF700617B2A /* NSArray+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Helpers.h"; sourceTree = "<group>"; };
+		4C5F187A1CD81DF700617B2A /* NSArray+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Helpers.m"; sourceTree = "<group>"; };
+		4C5F187B1CD81DF700617B2A /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
+		4C5F187C1CD81DF700617B2A /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
+		4C5F187D1CD81DF700617B2A /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
+		4C5F187E1CD81DF700617B2A /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
+		4C5F187F1CD81DF700617B2A /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		4C5F18801CD81DF700617B2A /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		4C5F18841CD81DF700617B2A /* UIView+BlurEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BlurEffect.h"; sourceTree = "<group>"; };
+		4C5F18851CD81DF700617B2A /* UIView+BlurEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BlurEffect.m"; sourceTree = "<group>"; };
+		4C5F188D1CD81E4700617B2A /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		4C5F188E1CD81E4700617B2A /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		4C5F18911CD81E5F00617B2A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		4C5F18921CD81E5F00617B2A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +110,10 @@
 		4C5F18531CD80AC700617B2A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4C5F18901CD81E5F00617B2A /* Reachability */,
+				4C5F188C1CD81E4700617B2A /* FXBlurView */,
+				4C5F18781CD81DF700617B2A /* Helper Categories */,
+				4C5F18741CD81D0C00617B2A /* AppUtils */,
 				4C5F18701CD810E200617B2A /* Resources */,
 				4C5F18541CD80AC700617B2A /* main.m */,
 			);
@@ -106,6 +134,53 @@
 				4C5F18721CD810E200617B2A /* logo.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		4C5F18741CD81D0C00617B2A /* AppUtils */ = {
+			isa = PBXGroup;
+			children = (
+				4C5F18751CD81D0C00617B2A /* AppUtils.h */,
+				4C5F18761CD81D0C00617B2A /* AppUtils.m */,
+			);
+			path = AppUtils;
+			sourceTree = "<group>";
+		};
+		4C5F18781CD81DF700617B2A /* Helper Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4C5F18791CD81DF700617B2A /* NSArray+Helpers.h */,
+				4C5F187A1CD81DF700617B2A /* NSArray+Helpers.m */,
+				4C5F187B1CD81DF700617B2A /* UIActionSheet+Blocks.h */,
+				4C5F187C1CD81DF700617B2A /* UIActionSheet+Blocks.m */,
+				4C5F187D1CD81DF700617B2A /* UIImage+Additions.h */,
+				4C5F187E1CD81DF700617B2A /* UIImage+Additions.m */,
+				4C5F187F1CD81DF700617B2A /* UIImage+ImageEffects.h */,
+				4C5F18801CD81DF700617B2A /* UIImage+ImageEffects.m */,
+				4C5F18841CD81DF700617B2A /* UIView+BlurEffect.h */,
+				4C5F18851CD81DF700617B2A /* UIView+BlurEffect.m */,
+			);
+			name = "Helper Categories";
+			path = "Libraries/Helper Categories";
+			sourceTree = "<group>";
+		};
+		4C5F188C1CD81E4700617B2A /* FXBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				4C5F188D1CD81E4700617B2A /* FXBlurView.h */,
+				4C5F188E1CD81E4700617B2A /* FXBlurView.m */,
+			);
+			name = FXBlurView;
+			path = Libraries/FXBlurView;
+			sourceTree = "<group>";
+		};
+		4C5F18901CD81E5F00617B2A /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				4C5F18911CD81E5F00617B2A /* Reachability.h */,
+				4C5F18921CD81E5F00617B2A /* Reachability.m */,
+			);
+			name = Reachability;
+			path = Libraries/Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,11 +254,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C5F188B1CD81DF700617B2A /* UIView+BlurEffect.m in Sources */,
+				4C5F18861CD81DF700617B2A /* NSArray+Helpers.m in Sources */,
 				4C5F18581CD80AC700617B2A /* AppDelegate.m in Sources */,
+				4C5F188F1CD81E4700617B2A /* FXBlurView.m in Sources */,
+				4C5F18771CD81D0C00617B2A /* AppUtils.m in Sources */,
 				4C5F185B1CD80AC700617B2A /* MasterViewController.m in Sources */,
+				4C5F18881CD81DF700617B2A /* UIImage+Additions.m in Sources */,
 				4C5F18551CD80AC700617B2A /* main.m in Sources */,
+				4C5F18891CD81DF700617B2A /* UIImage+ImageEffects.m in Sources */,
+				4C5F18931CD81E5F00617B2A /* Reachability.m in Sources */,
 				4C5F185E1CD80AC700617B2A /* DetailViewController.m in Sources */,
 				4C5F186F1CD80FF400617B2A /* LoginViewController.m in Sources */,
+				4C5F18871CD81DF700617B2A /* UIActionSheet+Blocks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
