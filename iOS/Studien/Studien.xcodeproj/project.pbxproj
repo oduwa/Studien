@@ -24,6 +24,7 @@
 		4C5F188B1CD81DF700617B2A /* UIView+BlurEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F18851CD81DF700617B2A /* UIView+BlurEffect.m */; };
 		4C5F188F1CD81E4700617B2A /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F188E1CD81E4700617B2A /* FXBlurView.m */; };
 		4C5F18931CD81E5F00617B2A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F18921CD81E5F00617B2A /* Reachability.m */; };
+		4CB292E41CEBC6830012FCF1 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB292E31CEBC6830012FCF1 /* DashboardViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		4C5F188E1CD81E4700617B2A /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		4C5F18911CD81E5F00617B2A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		4C5F18921CD81E5F00617B2A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		4CB292E21CEBC6830012FCF1 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
+		4CB292E31CEBC6830012FCF1 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 				4C5F18531CD80AC700617B2A /* Supporting Files */,
 				4C5F186D1CD80FF400617B2A /* LoginViewController.h */,
 				4C5F186E1CD80FF400617B2A /* LoginViewController.m */,
+				4CB292E21CEBC6830012FCF1 /* DashboardViewController.h */,
+				4CB292E31CEBC6830012FCF1 /* DashboardViewController.m */,
 			);
 			path = Studien;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 				4C5F188B1CD81DF700617B2A /* UIView+BlurEffect.m in Sources */,
 				4C5F18861CD81DF700617B2A /* NSArray+Helpers.m in Sources */,
 				4C5F18581CD80AC700617B2A /* AppDelegate.m in Sources */,
+				4CB292E41CEBC6830012FCF1 /* DashboardViewController.m in Sources */,
 				4C5F188F1CD81E4700617B2A /* FXBlurView.m in Sources */,
 				4C5F18771CD81D0C00617B2A /* AppUtils.m in Sources */,
 				4C5F185B1CD80AC700617B2A /* MasterViewController.m in Sources */,
@@ -413,6 +419,7 @@
 				4C5F186C1CD80AC700617B2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

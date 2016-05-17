@@ -13,10 +13,13 @@
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *signInButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textFieldBottomConstraint;
 
 
 - (IBAction)didPressSignInButton:(id)sender;
+- (IBAction)didEditEmailField:(id)sender;
+- (IBAction)didEditPasswordField:(id)sender;
 
 
 @end

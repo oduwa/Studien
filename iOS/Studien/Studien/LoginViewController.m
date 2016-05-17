@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "DashboardViewController.h"
 #import "AppUtils/AppUtils.h"
 
 @interface LoginViewController (){
@@ -23,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"email" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    _passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"password" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     _passwordTextField.secureTextEntry = YES;
     
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap)];
@@ -32,7 +35,7 @@
     CALayer *usernameBorder = [CALayer layer];
     CGFloat borderWidth = 1;
     usernameBorder.borderColor = [AppUtils colorWithHexString:@"#b44929"].CGColor;
-    usernameBorder.frame = CGRectMake(0, _emailTextField.frame.size.height - borderWidth, [UIScreen mainScreen].bounds.size.width-40, _emailTextField.frame.size.height);
+    usernameBorder.frame = CGRectMake(0, _emailTextField.frame.size.height - borderWidth, [UIScreen mainScreen].bounds.size.width-50, _emailTextField.frame.size.height);
     usernameBorder.borderWidth = borderWidth;
     [_emailTextField.layer addSublayer:usernameBorder];
     _emailTextField.layer.masksToBounds = YES;
@@ -85,7 +88,7 @@
     float animationDuration = [info[UIKeyboardAnimationDurationUserInfoKey] floatValue];
     
     float keyboardHeight = keyboardFrame.size.height;
-    offset = (keyboardHeight - 36);
+    offset = (keyboardHeight - (keyboardHeight/1.5));
     _textFieldBottomConstraint.constant += offset ;
     _logoImageView.hidden = YES;
     
@@ -127,5 +130,28 @@
 }
 
 - (IBAction)didPressSignInButton:(id)sender {
+    DashboardViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DashboardViewController"];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:dvc];
+    [self presentViewController:nvc animated:YES completion:nil];
 }
+
+- (IBAction)didEditEmailField:(id)sender {
+    if([AppUtils isStringEmpty:[_emailTextField text]] || [AppUtils isStringEmpty:[_passwordTextField text]]){
+        [_signInButton setTitleColor:[AppUtils colorWithHexString:@"#4C4C4C"] forState:UIControlStateNormal];
+    }
+    else{
+        [_signInButton setTitleColor:[AppUtils colorWithHexString:@"#2BAAE1"] forState:UIControlStateNormal];
+    }
+}
+
+- (IBAction)didEditPasswordField:(id)sender {
+    if([AppUtils isStringEmpty:[_emailTextField text]] || [AppUtils isStringEmpty:[_passwordTextField text]]){
+        [_signInButton setTitleColor:[AppUtils colorWithHexString:@"#4C4C4C"] forState:UIControlStateNormal];
+    }
+    else{
+        [_signInButton setTitleColor:[AppUtils colorWithHexString:@"#2BAAE1"] forState:UIControlStateNormal];
+    }
+}
+
+
 @end
