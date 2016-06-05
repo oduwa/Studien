@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWRevealTableViewCell.h"
 
-@interface DashboardViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface DashboardViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, SWRevealTableViewCellDataSource>
 
 @property (nonatomic, strong) NSMutableArray *upcomingSession;
 @property (nonatomic, strong) NSMutableArray *pendingSession;

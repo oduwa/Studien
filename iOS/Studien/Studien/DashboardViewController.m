@@ -7,6 +7,7 @@
 //
 
 #import "DashboardViewController.h"
+#import "DashboardTableViewCell.h"
 #import "AppUtils/AppUtils.h"
 
 @interface DashboardViewController ()
@@ -19,6 +20,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    if(self.navigationController){
+        self.navigationController.navigationBarHidden = YES;
+    }
+    
     _upcomingSession = [NSMutableArray new];
     _pendingSession = [NSMutableArray new];
     
@@ -26,10 +31,16 @@
     _pendingTableView.dataSource = self;
     _upcomingTableView.delegate = self;
     _pendingTableView.delegate = self;
+    _upcomingTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _pendingTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _upcomingTableView.backgroundColor = [AppUtils colorWithHexString:@"#3c3c3c"];
+    _pendingTableView.backgroundColor = [AppUtils colorWithHexString:@"#3c3c3c"];
     
-    if(self.navigationController){
-        self.navigationController.navigationBarHidden = YES;
-    }
+    [_upcomingTableView registerNib:[UINib nibWithNibName:@"DashboardTableViewCell" bundle:nil] forCellReuseIdentifier:@"upcomingCell"];
+    [_pendingTableView registerNib:[UINib nibWithNibName:@"DashboardTableViewCell" bundle:nil] forCellReuseIdentifier:@"upcomingCell"];
+    
+    _upcomingSession = (NSMutableArray*) @[@3, @2, @1];
+    _pendingSession = (NSMutableArray*) @[@3, @2, @1];
     
 }
 
@@ -60,7 +71,39 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    if(tableView == _upcomingTableView){
+        DashboardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"upcomingCell"];
+        cell.dataSource = self;
+        cell.dateLabel.text = @"Wed 25/05";
+        cell.timeLabel.text = @"10:10 am (2hr)";
+        cell.topRightLabel.text = @"Student: Nick";
+        cell.bottomRightLabel.text = @"Subject: English Language";
+        cell.separatorView.backgroundColor = [AppUtils colorWithHexString:@"#c4685d"];
+        if(indexPath.row%2 == 0){
+            cell.backgroundColor = [AppUtils colorWithHexString:@"#333333"];
+        }
+        else{
+            cell.backgroundColor = [AppUtils colorWithHexString:@"#4f4f4f"];
+        }
+        return cell;
+    }
+    else{
+        DashboardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"upcomingCell"];
+        cell.dataSource = self;
+        cell.dateLabel.text = @"Wed 25/05";
+        cell.timeLabel.text = @"10:10 am (2hr)";
+        cell.topRightLabel.text = @"Student: Nick";
+        cell.bottomRightLabel.text = @"Subject: English Language";
+        cell.separatorView.backgroundColor = [AppUtils colorWithHexString:@"#d8bf58"];
+        if(indexPath.row%2 == 0){
+            cell.backgroundColor = [AppUtils colorWithHexString:@"#333333"];
+        }
+        else{
+            cell.backgroundColor = [AppUtils colorWithHexString:@"#4f4f4f"];
+        }
+        return cell;
+    }
+    
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -89,6 +132,22 @@
     return view;
 }
 
+# pragma mark - SWRevealt Datasource
+
+- (NSArray*)rightButtonItemsInRevealTableViewCell:(SWRevealTableViewCell *)revealTableViewCell
+{
+    SWCellButtonItem *item1 = [SWCellButtonItem itemWithTitle:@"decline" handler:nil];
+    item1.backgroundColor = [UIColor whiteColor];
+    item1.tintColor = [UIColor blackColor];
+    item1.width = 75;
+    
+    SWCellButtonItem *item2 = [SWCellButtonItem itemWithTitle:@"accept" handler:nil];
+    item2.backgroundColor = [UIColor whiteColor];
+    item2.tintColor = [UIColor blackColor];
+    item2.width = 75;
+    
+    return @[item1, item2];
+}
 
 
 - (void)didReceiveMemoryWarning {

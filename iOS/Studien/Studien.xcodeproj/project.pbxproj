@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C5DE8F21D0478A500CC0592 /* DashboardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DE8F01D0478A500CC0592 /* DashboardTableViewCell.m */; };
+		4C5DE8F31D0478A500CC0592 /* DashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C5DE8F11D0478A500CC0592 /* DashboardTableViewCell.xib */; };
+		4C5DE8F51D04999900CC0592 /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5DE8F41D04999900CC0592 /* logo2.png */; };
+		4C5DE8F91D049AFD00CC0592 /* SWRevealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DE8F81D049AFD00CC0592 /* SWRevealTableViewCell.m */; };
+		4C5DE8FE1D04A1C400CC0592 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5DE8FB1D04A1C400CC0592 /* star.png */; };
+		4C5DE8FF1D04A1C400CC0592 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5DE8FC1D04A1C400CC0592 /* star@2x.png */; };
+		4C5DE9001D04A1C400CC0592 /* star@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5DE8FD1D04A1C400CC0592 /* star@3x.png */; };
 		4C5F18551CD80AC700617B2A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F18541CD80AC700617B2A /* main.m */; };
 		4C5F18581CD80AC700617B2A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F18571CD80AC700617B2A /* AppDelegate.m */; };
 		4C5F185B1CD80AC700617B2A /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F185A1CD80AC700617B2A /* MasterViewController.m */; };
@@ -28,6 +35,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C5DE8EF1D0478A500CC0592 /* DashboardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardTableViewCell.h; sourceTree = "<group>"; };
+		4C5DE8F01D0478A500CC0592 /* DashboardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardTableViewCell.m; sourceTree = "<group>"; };
+		4C5DE8F11D0478A500CC0592 /* DashboardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardTableViewCell.xib; sourceTree = "<group>"; };
+		4C5DE8F41D04999900CC0592 /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
+		4C5DE8F71D049AFD00CC0592 /* SWRevealTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealTableViewCell.h; sourceTree = "<group>"; };
+		4C5DE8F81D049AFD00CC0592 /* SWRevealTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealTableViewCell.m; sourceTree = "<group>"; };
+		4C5DE8FB1D04A1C400CC0592 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		4C5DE8FC1D04A1C400CC0592 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
+		4C5DE8FD1D04A1C400CC0592 /* star@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@3x.png"; sourceTree = "<group>"; };
 		4C5F18501CD80AC700617B2A /* Studien.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Studien.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5F18541CD80AC700617B2A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4C5F18561CD80AC700617B2A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,6 +90,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C5DE8F61D049AFD00CC0592 /* SWRevealTableViewCell 2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				4C5DE8F71D049AFD00CC0592 /* SWRevealTableViewCell.h */,
+				4C5DE8F81D049AFD00CC0592 /* SWRevealTableViewCell.m */,
+			);
+			name = "SWRevealTableViewCell 2.0";
+			path = "Libraries/SWRevealTableViewCell 2.0";
+			sourceTree = "<group>";
+		};
+		4C5DE8FA1D04A1C400CC0592 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				4C5DE8FB1D04A1C400CC0592 /* star.png */,
+				4C5DE8FC1D04A1C400CC0592 /* star@2x.png */,
+				4C5DE8FD1D04A1C400CC0592 /* star@3x.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
 		4C5F18471CD80AC700617B2A = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +144,9 @@
 				4C5F186E1CD80FF400617B2A /* LoginViewController.m */,
 				4CB292E21CEBC6830012FCF1 /* DashboardViewController.h */,
 				4CB292E31CEBC6830012FCF1 /* DashboardViewController.m */,
+				4C5DE8EF1D0478A500CC0592 /* DashboardTableViewCell.h */,
+				4C5DE8F01D0478A500CC0592 /* DashboardTableViewCell.m */,
+				4C5DE8F11D0478A500CC0592 /* DashboardTableViewCell.xib */,
 			);
 			path = Studien;
 			sourceTree = "<group>";
@@ -115,6 +154,7 @@
 		4C5F18531CD80AC700617B2A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4C5DE8F61D049AFD00CC0592 /* SWRevealTableViewCell 2.0 */,
 				4C5F18901CD81E5F00617B2A /* Reachability */,
 				4C5F188C1CD81E4700617B2A /* FXBlurView */,
 				4C5F18781CD81DF700617B2A /* Helper Categories */,
@@ -128,6 +168,7 @@
 		4C5F18701CD810E200617B2A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4C5DE8FA1D04A1C400CC0592 /* Icons */,
 				4C5F18711CD810E200617B2A /* Images */,
 			);
 			path = Resources;
@@ -137,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				4C5F18721CD810E200617B2A /* logo.png */,
+				4C5DE8F41D04999900CC0592 /* logo2.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -245,8 +287,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C5DE9001D04A1C400CC0592 /* star@3x.png in Resources */,
+				4C5DE8F31D0478A500CC0592 /* DashboardTableViewCell.xib in Resources */,
+				4C5DE8F51D04999900CC0592 /* logo2.png in Resources */,
+				4C5DE8FF1D04A1C400CC0592 /* star@2x.png in Resources */,
 				4C5F18731CD810E200617B2A /* logo.png in Resources */,
 				4C5F18661CD80AC700617B2A /* LaunchScreen.storyboard in Resources */,
+				4C5DE8FE1D04A1C400CC0592 /* star.png in Resources */,
 				4C5F18631CD80AC700617B2A /* Assets.xcassets in Resources */,
 				4C5F18611CD80AC700617B2A /* Main.storyboard in Resources */,
 			);
@@ -259,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C5DE8F21D0478A500CC0592 /* DashboardTableViewCell.m in Sources */,
 				4C5F188B1CD81DF700617B2A /* UIView+BlurEffect.m in Sources */,
 				4C5F18861CD81DF700617B2A /* NSArray+Helpers.m in Sources */,
 				4C5F18581CD80AC700617B2A /* AppDelegate.m in Sources */,
@@ -272,6 +320,7 @@
 				4C5F18931CD81E5F00617B2A /* Reachability.m in Sources */,
 				4C5F185E1CD80AC700617B2A /* DetailViewController.m in Sources */,
 				4C5F186F1CD80FF400617B2A /* LoginViewController.m in Sources */,
+				4C5DE8F91D049AFD00CC0592 /* SWRevealTableViewCell.m in Sources */,
 				4C5F18871CD81DF700617B2A /* UIActionSheet+Blocks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
