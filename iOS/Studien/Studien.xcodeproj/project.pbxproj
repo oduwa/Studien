@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C44922A1D3161200084E38F /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4492291D3161200084E38F /* CustomTabBarController.m */; };
+		4C44922D1D31697F0084E38F /* WhiteboardCodePopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C44922C1D31697F0084E38F /* WhiteboardCodePopoverViewController.m */; };
+		4C4492341D318DF70084E38F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C44922F1D318DF70084E38F /* logo.png */; };
+		4C4492351D318DF70084E38F /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4492301D318DF70084E38F /* logo2.png */; };
+		4C4492361D318DF70084E38F /* todo_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4492311D318DF70084E38F /* todo_list@2x.png */; };
+		4C4492371D318DF70084E38F /* todo_list@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4492321D318DF70084E38F /* todo_list@3x.png */; };
+		4C4492381D318DF70084E38F /* whiteboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C4492331D318DF70084E38F /* whiteboard.png */; };
 		4C5DE8F21D0478A500CC0592 /* DashboardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DE8F01D0478A500CC0592 /* DashboardTableViewCell.m */; };
 		4C5DE8F31D0478A500CC0592 /* DashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C5DE8F11D0478A500CC0592 /* DashboardTableViewCell.xib */; };
-		4C5DE8F51D04999900CC0592 /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5DE8F41D04999900CC0592 /* logo2.png */; };
 		4C5DE8F91D049AFD00CC0592 /* SWRevealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5DE8F81D049AFD00CC0592 /* SWRevealTableViewCell.m */; };
 		4C5DE8FE1D04A1C400CC0592 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5DE8FB1D04A1C400CC0592 /* star.png */; };
 		4C5DE8FF1D04A1C400CC0592 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5DE8FC1D04A1C400CC0592 /* star@2x.png */; };
@@ -22,7 +28,6 @@
 		4C5F18631CD80AC700617B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C5F18621CD80AC700617B2A /* Assets.xcassets */; };
 		4C5F18661CD80AC700617B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C5F18641CD80AC700617B2A /* LaunchScreen.storyboard */; };
 		4C5F186F1CD80FF400617B2A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F186E1CD80FF400617B2A /* LoginViewController.m */; };
-		4C5F18731CD810E200617B2A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5F18721CD810E200617B2A /* logo.png */; };
 		4C5F18771CD81D0C00617B2A /* AppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F18761CD81D0C00617B2A /* AppUtils.m */; };
 		4C5F18861CD81DF700617B2A /* NSArray+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F187A1CD81DF700617B2A /* NSArray+Helpers.m */; };
 		4C5F18871CD81DF700617B2A /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F187C1CD81DF700617B2A /* UIActionSheet+Blocks.m */; };
@@ -32,13 +37,29 @@
 		4C5F188F1CD81E4700617B2A /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F188E1CD81E4700617B2A /* FXBlurView.m */; };
 		4C5F18931CD81E5F00617B2A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F18921CD81E5F00617B2A /* Reachability.m */; };
 		4CB292E41CEBC6830012FCF1 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB292E31CEBC6830012FCF1 /* DashboardViewController.m */; };
+		4CC7753C1D410B5F00C6BC5B /* WhiteboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7753B1D410B5F00C6BC5B /* WhiteboardViewController.m */; };
+		4CC775401D410E6300C6BC5B /* Stroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7753F1D410E6300C6BC5B /* Stroke.m */; };
+		4CC775431D41109C00C6BC5B /* WBPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC775421D41109C00C6BC5B /* WBPoint.m */; };
+		4CC775471D4111C900C6BC5B /* WBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC775461D4111C900C6BC5B /* WBView.m */; };
+		4CC7754A1D4117EF00C6BC5B /* StrokeGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC775491D4117EF00C6BC5B /* StrokeGestureRecognizer.m */; };
+		9FE7EBE96C9C326C391F7D7E /* libPods-Studien.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 067D8CCC3599B2345898A6C6 /* libPods-Studien.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		067D8CCC3599B2345898A6C6 /* libPods-Studien.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Studien.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		23AD15FAB28EF534BB088FD9 /* Pods-Studien.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Studien.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Studien/Pods-Studien.debug.xcconfig"; sourceTree = "<group>"; };
+		4C4492281D3161200084E38F /* CustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarController.h; sourceTree = "<group>"; };
+		4C4492291D3161200084E38F /* CustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarController.m; sourceTree = "<group>"; };
+		4C44922B1D31697F0084E38F /* WhiteboardCodePopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiteboardCodePopoverViewController.h; sourceTree = "<group>"; };
+		4C44922C1D31697F0084E38F /* WhiteboardCodePopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiteboardCodePopoverViewController.m; sourceTree = "<group>"; };
+		4C44922F1D318DF70084E38F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		4C4492301D318DF70084E38F /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
+		4C4492311D318DF70084E38F /* todo_list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "todo_list@2x.png"; sourceTree = "<group>"; };
+		4C4492321D318DF70084E38F /* todo_list@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "todo_list@3x.png"; sourceTree = "<group>"; };
+		4C4492331D318DF70084E38F /* whiteboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteboard.png; sourceTree = "<group>"; };
 		4C5DE8EF1D0478A500CC0592 /* DashboardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardTableViewCell.h; sourceTree = "<group>"; };
 		4C5DE8F01D0478A500CC0592 /* DashboardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardTableViewCell.m; sourceTree = "<group>"; };
 		4C5DE8F11D0478A500CC0592 /* DashboardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardTableViewCell.xib; sourceTree = "<group>"; };
-		4C5DE8F41D04999900CC0592 /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
 		4C5DE8F71D049AFD00CC0592 /* SWRevealTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealTableViewCell.h; sourceTree = "<group>"; };
 		4C5DE8F81D049AFD00CC0592 /* SWRevealTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealTableViewCell.m; sourceTree = "<group>"; };
 		4C5DE8FB1D04A1C400CC0592 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
@@ -58,7 +79,6 @@
 		4C5F18671CD80AC700617B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C5F186D1CD80FF400617B2A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		4C5F186E1CD80FF400617B2A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		4C5F18721CD810E200617B2A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		4C5F18751CD81D0C00617B2A /* AppUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtils.h; sourceTree = "<group>"; };
 		4C5F18761CD81D0C00617B2A /* AppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtils.m; sourceTree = "<group>"; };
 		4C5F18791CD81DF700617B2A /* NSArray+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Helpers.h"; sourceTree = "<group>"; };
@@ -77,6 +97,17 @@
 		4C5F18921CD81E5F00617B2A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4CB292E21CEBC6830012FCF1 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
 		4CB292E31CEBC6830012FCF1 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
+		4CC7753A1D410B5F00C6BC5B /* WhiteboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiteboardViewController.h; sourceTree = "<group>"; };
+		4CC7753B1D410B5F00C6BC5B /* WhiteboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiteboardViewController.m; sourceTree = "<group>"; };
+		4CC7753E1D410E6300C6BC5B /* Stroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stroke.h; sourceTree = "<group>"; };
+		4CC7753F1D410E6300C6BC5B /* Stroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stroke.m; sourceTree = "<group>"; };
+		4CC775411D41109C00C6BC5B /* WBPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBPoint.h; sourceTree = "<group>"; };
+		4CC775421D41109C00C6BC5B /* WBPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBPoint.m; sourceTree = "<group>"; };
+		4CC775451D4111C900C6BC5B /* WBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBView.h; sourceTree = "<group>"; };
+		4CC775461D4111C900C6BC5B /* WBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBView.m; sourceTree = "<group>"; };
+		4CC775481D4117EF00C6BC5B /* StrokeGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrokeGestureRecognizer.h; sourceTree = "<group>"; };
+		4CC775491D4117EF00C6BC5B /* StrokeGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrokeGestureRecognizer.m; sourceTree = "<group>"; };
+		A0B0D938904068B9EC77B921 /* Pods-Studien.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Studien.release.xcconfig"; path = "Pods/Target Support Files/Pods-Studien/Pods-Studien.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +115,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FE7EBE96C9C326C391F7D7E /* libPods-Studien.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C294928FB5707FE858015E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				067D8CCC3599B2345898A6C6 /* libPods-Studien.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C44922E1D318DF70084E38F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4C44922F1D318DF70084E38F /* logo.png */,
+				4C4492301D318DF70084E38F /* logo2.png */,
+				4C4492311D318DF70084E38F /* todo_list@2x.png */,
+				4C4492321D318DF70084E38F /* todo_list@3x.png */,
+				4C4492331D318DF70084E38F /* whiteboard.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		4C5DE8F61D049AFD00CC0592 /* SWRevealTableViewCell 2.0 */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +167,8 @@
 			children = (
 				4C5F18521CD80AC700617B2A /* Studien */,
 				4C5F18511CD80AC700617B2A /* Products */,
+				837A5573A7186BFED00C0A3D /* Pods */,
+				1C294928FB5707FE858015E5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +183,8 @@
 		4C5F18521CD80AC700617B2A /* Studien */ = {
 			isa = PBXGroup;
 			children = (
+				4CC775441D4111B200C6BC5B /* View */,
+				4CC7753D1D410E5100C6BC5B /* Model */,
 				4C5F18561CD80AC700617B2A /* AppDelegate.h */,
 				4C5F18571CD80AC700617B2A /* AppDelegate.m */,
 				4C5F18591CD80AC700617B2A /* MasterViewController.h */,
@@ -147,6 +203,12 @@
 				4C5DE8EF1D0478A500CC0592 /* DashboardTableViewCell.h */,
 				4C5DE8F01D0478A500CC0592 /* DashboardTableViewCell.m */,
 				4C5DE8F11D0478A500CC0592 /* DashboardTableViewCell.xib */,
+				4C4492281D3161200084E38F /* CustomTabBarController.h */,
+				4C4492291D3161200084E38F /* CustomTabBarController.m */,
+				4C44922B1D31697F0084E38F /* WhiteboardCodePopoverViewController.h */,
+				4C44922C1D31697F0084E38F /* WhiteboardCodePopoverViewController.m */,
+				4CC7753A1D410B5F00C6BC5B /* WhiteboardViewController.h */,
+				4CC7753B1D410B5F00C6BC5B /* WhiteboardViewController.m */,
 			);
 			path = Studien;
 			sourceTree = "<group>";
@@ -168,19 +230,10 @@
 		4C5F18701CD810E200617B2A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4C44922E1D318DF70084E38F /* Images */,
 				4C5DE8FA1D04A1C400CC0592 /* Icons */,
-				4C5F18711CD810E200617B2A /* Images */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		4C5F18711CD810E200617B2A /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				4C5F18721CD810E200617B2A /* logo.png */,
-				4C5DE8F41D04999900CC0592 /* logo2.png */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 		4C5F18741CD81D0C00617B2A /* AppUtils */ = {
@@ -230,6 +283,37 @@
 			path = Libraries/Reachability;
 			sourceTree = "<group>";
 		};
+		4CC7753D1D410E5100C6BC5B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4CC7753E1D410E6300C6BC5B /* Stroke.h */,
+				4CC7753F1D410E6300C6BC5B /* Stroke.m */,
+				4CC775411D41109C00C6BC5B /* WBPoint.h */,
+				4CC775421D41109C00C6BC5B /* WBPoint.m */,
+				4CC775481D4117EF00C6BC5B /* StrokeGestureRecognizer.h */,
+				4CC775491D4117EF00C6BC5B /* StrokeGestureRecognizer.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4CC775441D4111B200C6BC5B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4CC775451D4111C900C6BC5B /* WBView.h */,
+				4CC775461D4111C900C6BC5B /* WBView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		837A5573A7186BFED00C0A3D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				23AD15FAB28EF534BB088FD9 /* Pods-Studien.debug.xcconfig */,
+				A0B0D938904068B9EC77B921 /* Pods-Studien.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,9 +321,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C5F186A1CD80AC700617B2A /* Build configuration list for PBXNativeTarget "Studien" */;
 			buildPhases = (
+				C54E5CD70C128C97190AA682 /* [CP] Check Pods Manifest.lock */,
 				4C5F184C1CD80AC700617B2A /* Sources */,
 				4C5F184D1CD80AC700617B2A /* Frameworks */,
 				4C5F184E1CD80AC700617B2A /* Resources */,
+				14266CD623B721BD5B54FA0A /* [CP] Embed Pods Frameworks */,
+				C37D8198F9699DE1CF0C75E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -287,12 +374,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C4492371D318DF70084E38F /* todo_list@3x.png in Resources */,
 				4C5DE9001D04A1C400CC0592 /* star@3x.png in Resources */,
+				4C4492381D318DF70084E38F /* whiteboard.png in Resources */,
 				4C5DE8F31D0478A500CC0592 /* DashboardTableViewCell.xib in Resources */,
-				4C5DE8F51D04999900CC0592 /* logo2.png in Resources */,
 				4C5DE8FF1D04A1C400CC0592 /* star@2x.png in Resources */,
-				4C5F18731CD810E200617B2A /* logo.png in Resources */,
 				4C5F18661CD80AC700617B2A /* LaunchScreen.storyboard in Resources */,
+				4C4492361D318DF70084E38F /* todo_list@2x.png in Resources */,
+				4C4492351D318DF70084E38F /* logo2.png in Resources */,
+				4C4492341D318DF70084E38F /* logo.png in Resources */,
 				4C5DE8FE1D04A1C400CC0592 /* star.png in Resources */,
 				4C5F18631CD80AC700617B2A /* Assets.xcassets in Resources */,
 				4C5F18611CD80AC700617B2A /* Main.storyboard in Resources */,
@@ -300,6 +390,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		14266CD623B721BD5B54FA0A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Studien/Pods-Studien-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C37D8198F9699DE1CF0C75E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Studien/Pods-Studien-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C54E5CD70C128C97190AA682 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4C5F184C1CD80AC700617B2A /* Sources */ = {
@@ -310,18 +448,25 @@
 				4C5F188B1CD81DF700617B2A /* UIView+BlurEffect.m in Sources */,
 				4C5F18861CD81DF700617B2A /* NSArray+Helpers.m in Sources */,
 				4C5F18581CD80AC700617B2A /* AppDelegate.m in Sources */,
+				4C44922D1D31697F0084E38F /* WhiteboardCodePopoverViewController.m in Sources */,
 				4CB292E41CEBC6830012FCF1 /* DashboardViewController.m in Sources */,
 				4C5F188F1CD81E4700617B2A /* FXBlurView.m in Sources */,
+				4CC775431D41109C00C6BC5B /* WBPoint.m in Sources */,
 				4C5F18771CD81D0C00617B2A /* AppUtils.m in Sources */,
 				4C5F185B1CD80AC700617B2A /* MasterViewController.m in Sources */,
+				4C44922A1D3161200084E38F /* CustomTabBarController.m in Sources */,
 				4C5F18881CD81DF700617B2A /* UIImage+Additions.m in Sources */,
+				4CC7754A1D4117EF00C6BC5B /* StrokeGestureRecognizer.m in Sources */,
+				4CC775401D410E6300C6BC5B /* Stroke.m in Sources */,
 				4C5F18551CD80AC700617B2A /* main.m in Sources */,
 				4C5F18891CD81DF700617B2A /* UIImage+ImageEffects.m in Sources */,
 				4C5F18931CD81E5F00617B2A /* Reachability.m in Sources */,
 				4C5F185E1CD80AC700617B2A /* DetailViewController.m in Sources */,
 				4C5F186F1CD80FF400617B2A /* LoginViewController.m in Sources */,
+				4CC7753C1D410B5F00C6BC5B /* WhiteboardViewController.m in Sources */,
 				4C5DE8F91D049AFD00CC0592 /* SWRevealTableViewCell.m in Sources */,
 				4C5F18871CD81DF700617B2A /* UIActionSheet+Blocks.m in Sources */,
+				4CC775471D4111C900C6BC5B /* WBView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +574,7 @@
 		};
 		4C5F186B1CD80AC700617B2A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23AD15FAB28EF534BB088FD9 /* Pods-Studien.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Studien/Info.plist;
@@ -440,6 +586,7 @@
 		};
 		4C5F186C1CD80AC700617B2A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0B0D938904068B9EC77B921 /* Pods-Studien.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Studien/Info.plist;

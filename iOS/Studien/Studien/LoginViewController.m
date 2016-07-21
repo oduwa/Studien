@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "DashboardViewController.h"
+#import "CustomTabBarController.h"
 #import "AppUtils/AppUtils.h"
 
 @interface LoginViewController (){
@@ -130,9 +131,9 @@
 }
 
 - (IBAction)didPressSignInButton:(id)sender {
-    DashboardViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DashboardViewController"];
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:dvc];
-    [self presentViewController:nvc animated:YES completion:nil];
+    //DashboardViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DashboardViewController"];
+    CustomTabBarController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTabController"];
+    [self presentViewController:dvc animated:YES completion:nil];
 }
 
 - (IBAction)didEditEmailField:(id)sender {

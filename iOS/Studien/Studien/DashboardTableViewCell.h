@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SWRevealTableViewCell.h"
 
-@interface DashboardTableViewCell : SWRevealTableViewCell
+@interface DashboardTableViewCell : SWRevealTableViewCell 
 
 
 @property (weak, nonatomic) IBOutlet UIView *separatorView;

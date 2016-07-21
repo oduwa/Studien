@@ -8,6 +8,9 @@
 
 #import "DashboardViewController.h"
 #import "DashboardTableViewCell.h"
+#import "MZFormSheetPresentationViewController.h"
+#import "WhiteboardCodePopoverViewController.h"
+#import "WhiteboardViewController.h"
 #import "AppUtils/AppUtils.h"
 
 @interface DashboardViewController ()
@@ -22,6 +25,10 @@
     
     if(self.navigationController){
         self.navigationController.navigationBarHidden = YES;
+    }
+    
+    if(self.tabBarController){
+        self.tabBarController.delegate = self;
     }
     
     _upcomingSession = [NSMutableArray new];
@@ -149,6 +156,25 @@
     return @[item1, item2];
 }
 
+
+#pragma mark - Tab Delegate
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    if (tabBarController.selectedIndex != 0) {
+        return YES;
+    }
+    else{
+        WhiteboardCodePopoverViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"WhiteboardCodePopover"];
+        vc.presentingDashboard = self;
+        MZFormSheetPresentationViewController *formSheetController = [[MZFormSheetPresentationViewController alloc] initWithContentViewController:vc];
+        formSheetController.presentationController.contentViewSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height*0.5); // or pass in UILayoutFittingCompressedSize to size automatically with auto-layout
+        formSheetController.presentationController.shouldCenterVertically = YES;
+        formSheetController.presentationController.shouldDismissOnBackgroundViewTap = YES;
+        
+        [self presentViewController:formSheetController animated:YES completion:nil];
+        return NO;
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
