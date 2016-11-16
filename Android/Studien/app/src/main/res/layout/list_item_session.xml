@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingBottom="8dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="8dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wed 25/05"
+        android:id="@+id/dateTextView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10:10 am (2hr)"
+        android:id="@+id/timeTextView"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/dateTextView"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student: Nick"
+        android:textColor="#2BAAE1"
+        android:id="@+id/studentTextView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Subject: English Language"
+        android:id="@+id/subjectTextView"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/studentTextView"
+        android:layout_alignEnd="@+id/studentTextView" />
+</RelativeLayout>
